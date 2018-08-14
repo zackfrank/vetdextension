@@ -1,0 +1,80 @@
+{
+  "manifest_version": 2,
+  "name": "Vetd Forwarding",
+  "version": "1.0",
+  "description": "Vendor selection, simplified.",
+  "icons": {
+    "16": "/icons/16.png",
+    "32": "/icons/32.png",
+    "48": "/icons/48.png",
+    "128": "/icons/128.png"
+  },
+  "page_action": {
+    "default_icon": {
+      "16": "/icons/16.png",
+      "23": "/icons/32.png",
+      "48": "/icons/48.png"
+        },
+    "default_title": "Forward your vendor emails."
+    // "default_popup": "popup.html"
+  },
+  // "browser_action": {
+  //   "default_icon": "/icons/16.png"
+  // },
+  // "action": "?",
+  "author": "The Z-Index",
+  // "automation": "?",
+  // "background": {
+  //   "scripts": ["background.js"],
+  //   "persistent": false
+    // "service_worker_script" "?"
+  // },
+  // "chrome_settings_overrides": {"?"},
+  // "chrome_ui_overrides": {
+  //   "bookmarks_ui": {
+  //     "remove_bookmark_shortcut": true,
+  //     "remove_button": true
+  //   }
+  // },
+  "chrome_url_overrides": {},
+  "commands": {},
+  // "content_capabilities": "?",
+  "content_scripts": [
+    {
+      "matches": ["https://mail.google.com/*", "https://inbox.google.com/*"],
+      "js": ["fwd.js"]
+    }
+  ],
+  "content_security_policy": "policyString",
+  "devtools_page": "devtools.html",
+  "externally_connectable": {
+    "matches": [
+      "https://mail.google.com/*"
+    ]
+  },
+  "file_browser_handlers": [],
+  "file_system_provider_capabilities": {
+    "configurable": true,
+    "multiple_mounts": true,
+    "source": "network"
+  },
+  "homepage_url": "https://getvetd.com",
+  "minimum_chrome_version": "17.0.963",
+  "nacl_modules": [],
+  "offline_enabled": false,
+  "omnibox": {
+    "keyword": "vetd"
+  },
+  "optional_permissions": ["tabs"],
+  "permissions": [
+    "declarativeContent"
+  ],
+  "requirements": {},
+  "sandbox": [],
+  "short_name": "Vetd",
+  "tts_engine": {},
+  "update_url": "http://getvetd.com/updatechromeextension",
+  "version_name": "Beta",
+  "web_accessible_resources": []
+}
+
